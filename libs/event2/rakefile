@@ -12,4 +12,9 @@ LIB_PUBLIC = [
 
 LINK_PUBLIC = []
 
+task :ldconfig do
+   system("sudo ldconfig")
+end
+task :postbuild => [:ldconfig]
+
 require "#{ENV['CORTO_BUILD']}/package"

@@ -16,4 +16,9 @@ LINK_PUBLIC = []
 
 CFLAGS = []
 
+task :ldconfig do
+   system("sudo ldconfig")
+end
+task :postbuild => [:ldconfig]
+
 require "#{ENV['CORTO_BUILD']}/package"
